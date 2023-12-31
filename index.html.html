@@ -1,0 +1,91 @@
+<html>
+<head>
+<style>
+
+ .travel{
+ margin-left:10rem;
+      background-color:black;
+	  width:30%;
+	  height:40%;
+	  border-radius:2rem;
+	  text-align:center;
+	  padding:1rem;
+	
+	  
+ }
+ #valid{
+     color:red;
+	 margin-left:2rem;
+	 border: 2px solid white;
+	 border-radius:1rem;
+ }
+
+  #digit{
+	  color:red;
+	  border: 2px solid white;
+	  border-radius:1rem;
+	  font-size:4rem;
+	  text-align:center;
+	  margin-top:3rem;
+	  margin-left:4rem;
+	 
+  }
+</style>
+</head>
+<body>
+
+ <div class='travel'>
+		<p id='digit'></P>
+		<h2 id='valid'></h2>
+		<p id='year'></p>
+		<p id='month'></p>
+  </div>
+<script>
+
+  
+   setInterval(()=>{
+      let day=new Date();
+	  let hour=day.getHours();
+	  let min=day.getMinutes();
+	  let sec=day.getSeconds();
+	  let date=day.getDate();
+	  let month=day.getMonth();
+	  let year=day.getFullYear();
+	  document.getElementById('digit').innerHTML=(hour+':'+min+':'+sec);
+	  console.log(year)
+	  console.log(month)
+	  console.log(date)
+	  document.getElementById('month').innerHTML(date+':'+month+':'+year);
+
+	  
+	   if(date==0){
+	     document.getElementById('valid').innerHTML=("sunday");
+	   }
+	   else if(date==1){
+	      document.getElementById('valid').innerHTML=("monday");
+	   }
+	   else if(date==2){
+	      document.getElementById('valid').innerHTML=("Tuesday");
+	   }
+	   else if(date==3){
+	      document.getElementById('valid').innerHTML=("Wednesday");
+	   }
+	   else if(date==4){
+	      document.getElementById('valid').innerHTML=("Thursday");
+	   }
+	   else if(date==5){
+	      document.getElementById('valid').innerHTML=("Friday");
+	   }
+	   else if(date==6){
+	      document.getElementById('valid').innerHTML=("Staturday");
+	   }
+
+   })
+   
+  
+   
+   
+  
+</script>
+</body>
+</html>
